@@ -10,9 +10,6 @@ var Bacon = require('./views/bacon');
 var Brisket = require('./views/brisket');
 
 // The router needs a root component to render.
-// For demo purposes, we will just use an empty one
-// because we are using the HTML as the app template.
-// !! Note that the App is not a Vue instance.
 var App = Vue.extend({
     name: 'bacon-router',
     data:() => {
