@@ -1,7 +1,6 @@
 {
   "name": "vue-router",
   "description": "JS app on Vue",
-  "main": "index.js",
   "authors": [
     "Matthijs Alles"
   ],
@@ -10,7 +9,6 @@
   "private": true,
   "dependencies": {
     "uikit3": "https://github.com/yootheme/uikit3.git",
-    "vue-form": "pagekit/vue-form#master",
-    "vue-resource": "0.7.4"
+    "jquery": "^3.1.0"
   }
 }

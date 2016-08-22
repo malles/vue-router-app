@@ -13,9 +13,6 @@ module.exports = [
         resolve: {
             alias: {
                 "jquery$": assets + "/jquery/dist/jquery.js",
-                "vue-form$": assets + "/vue-form/dist/vue-form.common.js",
-                "vue-resource$": assets + "/vue-resource/dist/vue-resource.common.js",
-                "JSONStorage$": assets + "/JSONStorage/storage.js"
             }
         },
         module: {
