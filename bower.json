@@ -9,10 +9,7 @@
   "homepage": "",
   "private": true,
   "dependencies": {
-    "JSONStorage": "~1.0.3",
-    "lodash": "~4.0.0",
     "uikit3": "https://github.com/yootheme/uikit3.git",
-    "vue": "~2.0.0",
     "vue-form": "pagekit/vue-form#master",
     "vue-resource": "0.7.4"
   }

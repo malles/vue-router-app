@@ -25,7 +25,6 @@ module.exports = [
                     query: { presets: ['es2015'] }
                 },
                 { test: /\.vue$/, loader: "vue" },
-                { test: /\.json$/, loader: "json" },
                 { test: /\.html$/, loader: "vue-html" }
             ]
         }
