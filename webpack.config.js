@@ -1,5 +1,6 @@
-var assets = __dirname + "/web/assets";
-
+var assets = __dirname + "/public/assets";
+var modRewrite = require('connect-modrewrite');
+var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 module.exports = [
 
     {
@@ -7,7 +8,7 @@ module.exports = [
             "app": "./src/app"
         },
         output: {
-            filename: "./web/bundle/[name].js"
+            filename: "./public/bundle/[name].js"
         },
         resolve: {
             alias: {
@@ -19,15 +20,31 @@ module.exports = [
         },
         module: {
             loaders: [
+                { test: /\.vue$/, loader: "vue" },
+                { test: /\.html$/, loader: "vue-html" },
                 {
                     test: /(src|tests)(\/|\\).*\.js$/,
                     loader: 'babel',
                     query: { presets: ['es2015'] }
-                },
-                { test: /\.vue$/, loader: "vue" },
-                { test: /\.html$/, loader: "vue-html" }
+                }
             ]
-        }
+        },
+        plugins: [
+            new BrowserSyncPlugin({
+                // browse to http://localhost:3000/ during development,
+                // ./public directory is being served
+                host: 'localhost',
+                port: 3000,
+                server: {
+                    baseDir: ['public'],
+                    middleware: [
+                        modRewrite([
+                            '!\\.\\w+$ /index.html [L]'
+                        ])
+                    ]
+                }
+            })
+        ]
     }
 
 ];

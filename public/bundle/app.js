@@ -59,36 +59,46 @@
 	_vue2.default.use(_vueRouter2.default);
 
 	// Define some components
-	var Home = _vue2.default.extend({
-	    template: '<p>This is home!</p>'
-	});
-
-	var Bacon = _vue2.default.extend({
-	    template: '<p>This is bacon!</p>'
-	});
+	var Home = __webpack_require__(4);
+	var Bacon = __webpack_require__(8);
+	var Brisket = __webpack_require__(12);
 
 	// The router needs a root component to render.
 	// For demo purposes, we will just use an empty one
 	// because we are using the HTML as the app template.
 	// !! Note that the App is not a Vue instance.
-	var App = _vue2.default.extend({});
+	var App = _vue2.default.extend({
+	    name: 'bacon-router',
+	    data: function data() {
+	        return {
+	            config: window.$config
+	        };
+	    }
+	});
 
 	// Create a router instance.
-	// You can pass in additional options here, but let's
-	// keep it simple for now.
-	var router = new _vueRouter2.default();
+	var router = new _vueRouter2.default({
+	    hashbang: true,
+	    history: true,
+	    saveScrollPosition: true,
+	    linkActiveClass: 'uk-active'
+	});
 
 	// Define some routes.
-	// Each route should map to a component. The "component" can
-	// either be an actual component constructor created via
-	// Vue.extend(), or just a component options object.
-	// We'll talk about nested routes later.
 	router.map({
 	    '/': {
-	        component: Home
+	        name: 'home',
+	        component: _vue2.default.extend(Home)
 	    },
 	    '/bacon': {
-	        component: Bacon
+	        name: 'bacon',
+	        component: _vue2.default.extend(Bacon),
+	        subRoutes: {
+	            '/brisket': {
+	                name: 'brisket',
+	                component: _vue2.default.extend(Brisket)
+	            }
+	        }
 	    }
 	});
 
@@ -13056,6 +13066,167 @@
 	  return Router;
 
 	}));
+
+/***/ },
+/* 4 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+
+	    name: 'home-route',
+
+	    props: ['config'],
+
+	    template: '<div><bc-home :config="config"></bc-home></div>',
+
+	    components: {
+	        'bc-home': __webpack_require__(5)
+	    }
+	};
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(6)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\home.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(7)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./home.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    name: 'home',
+
+	    props: ['config'],
+
+	    data: function data() {
+	        return {
+	            text: 'Bacon ipsum dolor amet in t-bone dolor nostrud jerky picanha. Proident irure incididunt veniam. T-bone lorem picanha est minim ribeye. Dolore cow sed cupidatat in, beef turkey kielbasa voluptate flank tempor shoulder. Spare ribs landjaeger porkchop, mollit boudin hamburger sirloin. Drumstick fatback ipsum landjaeger.'
+	        };
+	    }
+	};
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\n   <h1>I can say {{ config.title}} </h1>\n\n    <p>{{ text }}</p>\n\n</div>\n";
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	module.exports = {
+	    name: 'bacon-route',
+
+	    data: function data() {
+	        return {
+	            baconIs: 'yum'
+	        };
+	    },
+
+	    props: ['config'],
+
+	    template: '<div><bc-bacon :config="config"></bc-bacon></div>',
+
+	    components: {
+	        'bc-bacon': __webpack_require__(9)
+	    }
+	};
+
+/***/ },
+/* 9 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_script__, __vue_template__
+	__vue_script__ = __webpack_require__(10)
+	if (__vue_script__ &&
+	    __vue_script__.__esModule &&
+	    Object.keys(__vue_script__).length > 1) {
+	  console.warn("[vue-loader] src\\components\\bacon.vue: named exports in *.vue files are ignored.")}
+	__vue_template__ = __webpack_require__(11)
+	module.exports = __vue_script__ || {}
+	if (module.exports.__esModule) module.exports = module.exports.default
+	if (__vue_template__) {
+	(typeof module.exports === "function" ? (module.exports.options || (module.exports.options = {})) : module.exports).template = __vue_template__
+	}
+	if (false) {(function () {  module.hot.accept()
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  var id = "./bacon.vue"
+	  if (!module.hot.data) {
+	    hotAPI.createRecord(id, module.exports)
+	  } else {
+	    hotAPI.update(id, module.exports, __vue_template__)
+	  }
+	})()}
+
+/***/ },
+/* 10 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+	    name: 'bacon',
+
+	    props: ['config'],
+
+	    data: function data() {
+	        return {
+	            text: 'Bacon ipsum dolor amet in t-bone dolor nostrud jerky picanha. Proident irure incididunt veniam. T-bone lorem picanha est minim ribeye. Dolore cow sed cupidatat in, beef turkey kielbasa voluptate flank tempor shoulder. Spare ribs landjaeger porkchop, mollit boudin hamburger sirloin. Drumstick fatback ipsum landjaeger.'
+	        };
+	    }
+	};
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = "\n<div>\n\n   <h1>I can say {{ config.title}} too</h1>\n\n    <p>{{ text }}</p>\n\n    <router-view :config=\"config\" class=\"uk-margin\"></router-view>\n\n</div>\n";
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	module.exports = {
+
+	        name: 'brisket-route',
+
+	        template: '<div>brisket</div>'
+
+	};
 
 /***/ }
 /******/ ]);

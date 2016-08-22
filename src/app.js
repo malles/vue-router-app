@@ -5,36 +5,46 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 // Define some components
-var Home = Vue.extend({
-    template: '<p>This is home!</p>'
-});
-
-var Bacon = Vue.extend({
-    template: '<p>This is bacon!</p>'
-});
+var Home = require('./views/home');
+var Bacon = require('./views/bacon');
+var Brisket = require('./views/brisket');
 
 // The router needs a root component to render.
 // For demo purposes, we will just use an empty one
 // because we are using the HTML as the app template.
 // !! Note that the App is not a Vue instance.
-var App = Vue.extend({});
+var App = Vue.extend({
+    name: 'bacon-router',
+    data:() => {
+        return {
+            config: window.$config
+        };
+    }
+});
 
 // Create a router instance.
-// You can pass in additional options here, but let's
-// keep it simple for now.
-var router = new VueRouter();
+var router = new VueRouter({
+    hashbang: true,
+    history: true,
+    saveScrollPosition: true,
+    linkActiveClass: 'uk-active'
+});
 
 // Define some routes.
-// Each route should map to a component. The "component" can
-// either be an actual component constructor created via
-// Vue.extend(), or just a component options object.
-// We'll talk about nested routes later.
 router.map({
     '/': {
-        component: Home
+        name: 'home',
+        component: Vue.extend(Home)
     },
     '/bacon': {
-        component: Bacon
+        name: 'bacon',
+        component: Vue.extend(Bacon),
+        subRoutes: {
+            '/brisket': {
+                name: 'brisket',
+                component: Vue.extend(Brisket)
+            }
+        }
     }
 });
 
