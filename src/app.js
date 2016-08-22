@@ -9,7 +9,9 @@ Vue.use(VueResource);
 // Define some components
 var Home = require('./views/home');
 var Bacon = require('./views/bacon');
-var Brisket = require('./views/brisket');
+
+var BaconMain = require('./components/bacon-main.vue');
+var Brisket = require('./components/brisket.vue');
 
 // The router needs a root component to render.
 var App = Vue.extend({
@@ -23,7 +25,7 @@ var App = Vue.extend({
 
 // Create a router instance.
 var router = new VueRouter({
-    hashbang: true,
+    hashbang: false,
     history: true,
     saveScrollPosition: true,
     linkActiveClass: 'uk-active'
@@ -39,6 +41,10 @@ router.map({
         name: 'bacon',
         component: Vue.extend(Bacon),
         subRoutes: {
+            '/': {
+                name: 'bacon-main',
+                component: Vue.extend(BaconMain)
+            },
             '/brisket': {
                 name: 'brisket',
                 component: Vue.extend(Brisket)

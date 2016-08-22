@@ -19,10 +19,10 @@
                             <ul class="uk-navbar-nav">
                                 <li v-link-active><a  v-link="{ name: 'home', exact: true }">Home</a></li>
                                 <li v-link-active>
-                                    <a v-link="{  name: 'bacon', exact: true }">Bacon</a>
+                                    <a v-link="{  name: 'bacon' }">Bacon</a>
                                     <div class="uk-navbar-dropdown">
                                         <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li v-link-active><a v-link="{ path: '/bacon/brisket' }">
+                                            <li v-link-active><a v-link="{ name: 'brisket' }">
                                                 <span class="uk-margin-small-right" uk-icon="icon: table"></span>Brisket</a>
                                             </li>
                                         </ul>
@@ -43,38 +43,6 @@
 
                     <router-view :config="config" class="uk-margin"></router-view>
 
-                    <div class="uk-grid" uk-grid>
-                        <div class="uk-width-1-2@m">
-                            <div class="uk-card uk-card-default uk-card-body">
-                                <h3 class="uk-card-title">A card</h3>
-                                <p>
-                                    Bacon ipsum dolor amet in t-bone dolor nostrud jerky picanha. Proident irure
-                                    incididunt
-                                    veniam.
-                                    T-bone lorem picanha est minim ribeye. Dolore cow sed cupidatat in in, beef turkey
-                                    kielbasa
-                                    voluptate flank tempor shoulder. Spare ribs landjaeger pork chop, mollit boudin
-                                    hamburger
-                                    sirloin. Drumstick fatback ipsum landjaeger.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="uk-width-1-2@m">
-                            <div class="uk-card uk-card-primary uk-card-body">
-                                <h3 class="uk-card-title">A card</h3>
-                                <p>
-                                    Bacon ipsum dolor amet in t-bone dolor nostrud jerky picanha. Proident irure
-                                    incididunt
-                                    veniam.
-                                    T-bone lorem picanha est minim ribeye. Dolore cow sed cupidatat in in, beef turkey
-                                    kielbasa
-                                    voluptate flank tempor shoulder. Spare ribs landjaeger pork chop, mollit boudin
-                                    hamburger
-                                    sirloin. Drumstick fatback ipsum landjaeger.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
                 </main>
             </div>
         </div>
