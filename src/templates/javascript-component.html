@@ -1,0 +1,18 @@
+
+<div>
+
+    <template v-if="component.props.length">
+
+        <h4>Element properties</h4>
+        <javascript-options :options="component.props"></javascript-options>
+
+    </template>
+
+    <template v-if="component.options.length">
+
+        <h4>Javascript Options</h4>
+        <javascript-options :options="component.options"></javascript-options>
+
+    </template>
+
+</div>

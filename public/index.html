@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="/assets/uikit3/css/uikit.theme.app.css"/>
     <script src="/assets/jquery/dist/jquery.min.js"></script>
     <script src="/assets/uikit3/js/uikit.js"></script>
+
 </head>
 <body>
 <div id="app">
@@ -18,16 +19,12 @@
                         <div class="uk-navbar-left">
                             <ul class="uk-navbar-nav">
                                 <li v-link-active><a  v-link="{ name: 'home', exact: true }">Home</a></li>
-                                <li v-link-active>
-                                    <a v-link="{  name: 'bacon' }">Bacon</a>
-                                    <div class="uk-navbar-dropdown">
-                                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                                            <li v-link-active><a v-link="{ name: 'brisket' }">
-                                                <span class="uk-margin-small-right" uk-icon="icon: table"></span>Brisket</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </li>
+                                <li v-link-active><a
+                                        v-link="{ name: 'overview' }">Overview</a></li>
+                                <li v-link-active><a
+                                        v-link="{ name: 'javascript', params: { namespace: 'main', component: 'main' } }">Javascript</a></li>
+                                <li v-link-active><a
+                                        v-link="{ name: 'less', params: {component: 'main' } }">Less</a></li>
                             </ul>
                         </div>
                     </nav>
