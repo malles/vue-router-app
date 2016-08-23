@@ -6,24 +6,29 @@ import VueResource from 'vue-resource';
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
+Vue.component('code-example', require('./components/code-example.vue'));
+Vue.component('javascript-options', require('./components/javascript-options.vue'));
+
 // Define some components
-var Home = require('./views/home');
-var Bacon = require('./views/bacon');
-var Brisket = require('./views/brisket');
+var home = require('./views/home.vue');
+var overview = require('./views/overview.vue');
+var javascript = require('./views/javascript.vue');
+var less = require('./views/less.vue');
 
 // The router needs a root component to render.
 var App = Vue.extend({
-    name: 'bacon-router',
+    name: 'app-root',
     data:() => {
         return {
             config: window.$config
         };
     }
+
 });
 
 // Create a router instance.
 var router = new VueRouter({
-    hashbang: true,
+    hashbang: false,
     history: true,
     saveScrollPosition: true,
     linkActiveClass: 'uk-active'
@@ -33,17 +38,27 @@ var router = new VueRouter({
 router.map({
     '/': {
         name: 'home',
-        component: Vue.extend(Home)
+        component: Vue.extend(home)
     },
-    '/bacon': {
-        name: 'bacon',
-        component: Vue.extend(Bacon),
-        subRoutes: {
-            '/brisket': {
-                name: 'brisket',
-                component: Vue.extend(Brisket)
-            }
-        }
+    '/overview': {
+        name: 'overview',
+        component: Vue.extend(overview),
+        subRoutes: require('../docs/overview/subroutes')
+    },
+    '/javascript/:namespace/:component': {
+        name: 'javascript',
+        component: Vue.extend(javascript)
+    },
+    '/less/:component': {
+        name: 'less',
+        component: Vue.extend(less)
+    }
+});
+
+router.afterEach((transition) => {
+    if (transition.to.params && transition.to.params.component) {
+        console.log(`scroll to ${transition.to.params.component}`);
+        UIkit.scroll(jQuery(`#${transition.to.params.component}`)); //todo?!?
     }
 });
 
