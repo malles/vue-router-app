@@ -62,7 +62,9 @@ router.map({
 router.afterEach((transition) => {
     if (transition.to.params && transition.to.params.component) {
         console.log(`scroll to ${transition.to.params.component}`);
-        UIkit.scroll(jQuery(`#${transition.to.params.component}`)); //todo?!?
+        var a = jQuery(`<a href="#${transition.to.params.component}"></a>`);
+        UIkit.scroll(a);
+        a.trigger('click'); //todo?!?
     }
 });
 

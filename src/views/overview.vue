@@ -10,6 +10,8 @@
 
                 <div class="uk-card uk-card-default uk-card-body" uk-sticky="contain:true">
 
+                    <p class="uk-text-center"><a href="#app" uk-totop uk-scroll></a></p>
+
                     <ul class="uk-tab uk-tab-left">
                         <li v-for="route in routes" v-link-active>
                             <a v-link="{ name: route.name }">{{ route.title }}</a>
