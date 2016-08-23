@@ -6,12 +6,12 @@
             {{{ example.example }}}
 
         </div>
-        <ul class="uk-tab" uk-tab="connect:'#lightbox-construct-example'">
+        <ul class="uk-tab" uk-tab="connect:'#{{id}}'">
             <li v-if="example.html"><a href="#">HTML</a></li>
             <li v-if="example.js"><a href="#">Javascript</a></li>
             <li v-if="example.example"><a href="#">Example code</a></li>
         </ul>
-        <ul id="lightbox-construct-example" class="uk-switcher">
+        <ul :id="id" class="uk-switcher">
             <li v-if="example.html">
                 <pre><code>{{ example.html }}</code></pre>
             </li>
@@ -26,11 +26,19 @@
 
 </template>
 <script>
+    var _ = require('lodash');
+
     module.exports = {
 
         name: 'code-example',
 
-        props: ['example']
+        props: ['example'],
+
+        data() {
+            return {
+                id: _.uniqueId('example-')
+            };
+        }
 
     };
 </script>
