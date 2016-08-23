@@ -27,8 +27,9 @@
         data() {
             return {
                 title: 'Accordion',
+                route: {name: 'less', params: {component: this.$options.name}},
                 overview: { name: 'accordion' },
-                javascript: { name: 'javascript', params: { component: 'accordion'} },
+                javascript: { name: 'javascript', params: { namespace: 'core', component: 'accordion'} },
                 examples: this.$options.examples
             };
         }

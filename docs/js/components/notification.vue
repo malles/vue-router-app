@@ -15,6 +15,8 @@
 
         name: 'notification',
 
+        namespace: 'components',
+
         examples: {},
 
         props: ['component'],
@@ -27,6 +29,7 @@
         data() {
             return {
                 title: 'Notification',
+                route: {name: 'javascript', params: {namespace: this.$options.namespace, component: this.$options.name}},
                 overview: { name: 'notification' },
                 less: { name: 'less', params: { component: 'notification'} },
                 examples: this.$options.examples

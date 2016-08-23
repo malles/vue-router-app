@@ -5,7 +5,8 @@
 
         <p>Bacon ipsum dolor amet ham sausage landjaeger pork loin, bacon sirloin short ribs tri-tip salami shank. Capicola shoulder drumstick, frankfurter picanha pancetta shank pastrami bresaola prosciutto biltong venison. Picanha sausage drumstick biltong, capicola venison boudin flank rump short ribs cow frankfurter pork landjaeger. Sirloin sausage cow frankfurter. Bacon drumstick tenderloin venison tongue pork brisket pancetta. Spare ribs pancetta pork loin, pork chop biltong alcatra t-bone picanha prosciutto strip steak cupim. Fatback picanha corned beef pork capicola ground round doner kielbasa shoulder beef ribs.</p>
 
-        <h4>Construct lightbox component manually</h4>
+        <h4 v-permalink:create-manually="route">
+            Construct lightbox component manually</h4>
 
         <code-example class="uk-margin" :example="examples.manual"></code-example>
 
@@ -19,6 +20,8 @@
     module.exports = {
 
         name: 'lightbox',
+
+        namespace: 'components',
 
         examples: {
             manual: {
@@ -56,8 +59,8 @@
         data() {
             return {
                 title: 'Lightbox',
+                route: {name: 'javascript', params: {namespace: this.$options.namespace, component: this.$options.name}},
                 overview: { name: 'lightbox' },
-                less: { name: 'less', params: { component: 'lightbox'} },
                 examples: this.$options.examples
             };
         }

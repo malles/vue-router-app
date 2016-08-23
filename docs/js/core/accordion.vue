@@ -15,6 +15,8 @@
 
         name: 'accordion',
 
+        namespace: 'core',
+
         examples: {},
 
         props: ['component'],
@@ -27,6 +29,7 @@
         data() {
             return {
                 title: 'Accordion',
+                route: {name: 'javascript', params: {namespace: this.$options.namespace, component: this.$options.name}},
                 overview: { name: 'accordion' },
                 less: { name: 'less', params: { component: 'accordion'} },
                 examples: this.$options.examples

@@ -31,6 +31,7 @@
         data() {
             return {
                 title: 'Lightbox',
+                route: {name: this.$options.name},
                 props: js_index.components.components.lightbox.props,
                 options: js_index.components.components.lightbox.options,
                 vars: [],

@@ -8,6 +8,7 @@ Vue.use(VueResource);
 
 Vue.component('code-example', require('./components/code-example.vue'));
 Vue.component('javascript-options', require('./components/javascript-options.vue'));
+Vue.directive('permalink', require('./directives/permalink'));
 
 // Define some components
 var home = require('./views/home.vue');

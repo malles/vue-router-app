@@ -32,6 +32,7 @@
         data() {
             return {
                 title: 'Notification',
+                route: {name: this.$options.name},
                 props: js_index.components.components.notification.props,
                 options: js_index.components.components.notification.options,
                 vars: less_index.notification.vars,

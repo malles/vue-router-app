@@ -3,18 +3,18 @@
 
     <template v-if="component.vars.length">
 
-        <h4>Component variables</h4>
+        <h4 v-permalink:variables="route">Component variables</h4>
 
         <javascript-options :options="component.vars"></javascript-options>
 
         <template v-if="component.theme.length">
-            <h4>Theme variables</h4>
+            <h4 v-permalink:theme-variables="route">Theme variables</h4>
 
             <javascript-options :options="component.theme"></javascript-options>
 
         </template>
 
-        <h4>Component hooks</h4>
+        <h4 v-permalink:hooks="route">Component hooks</h4>
 
         <div v-if="component.hooks.length" class="uk-overflow-auto">
             <table class="uk-table uk-table-striped">

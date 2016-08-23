@@ -7,26 +7,25 @@
 
         <code-example class="uk-margin" :example="examples.basic"></code-example>
 
-        <h4>Color modifiers</h4>
+        <h4 v-permalink:color-modifiers="route">Color modifiers</h4>
 
         <p>Bacon ipsum dolor amet ham sausage landjaeger pork loin, bacon sirloin short ribs tri-tip salami shank. Capicola shoulder drumstick, frankfurter picanha pancetta shank pastrami bresaola prosciutto biltong venison.</p>
 
         <code-example class="uk-margin" :example="examples.modifiers"></code-example>
 
 
-        <h4>More content</h4>
+        <h4 v-permalink:more-contet="route">More content</h4>
 
         <p>Use a <code>button</code> element ...</p>
 
         <code-example class="uk-margin" :example="examples.more_content"></code-example>
 
 
-        <h4>Animations</h4>
+        <h4 v-permalink:animations="route">Animations</h4>
 
         <p>Use the <code>animation</code> option ...</p>
 
         <code-example class="uk-margin" :example="examples.animation"></code-example>
-
 
 
         <partial name="overview-component"></partial>
@@ -122,6 +121,7 @@
         data() {
             return {
                 title: 'Alert',
+                route: {name: this.$options.name},
                 props: js_index.core.components.alert.props,
                 options: js_index.core.components.alert.options,
                 vars: less_index.alert.vars,

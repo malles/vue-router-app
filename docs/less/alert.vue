@@ -27,8 +27,9 @@
         data() {
             return {
                 title: 'Alert',
+                route: {name: 'less', params: {component: this.$options.name}},
                 overview: { name: 'alert' },
-                javascript: { name: 'javascript', params: { component: 'alert'} },
+                javascript: { name: 'javascript', params: { namespace: 'core', component: 'alert'} },
                 examples: this.$options.examples
             };
         }

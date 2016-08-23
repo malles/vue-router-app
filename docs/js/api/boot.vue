@@ -15,6 +15,8 @@
 
         name: 'boot',
 
+        namespace: 'api',
+
         examples: {},
 
         props: ['component'],
@@ -27,6 +29,7 @@
         data() {
             return {
                 title: 'Boot',
+                route: {name: 'javascript', params: {namespace: this.$options.namespace, component: this.$options.name}},
                 examples: this.$options.examples
             };
         }
