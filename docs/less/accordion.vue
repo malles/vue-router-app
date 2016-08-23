@@ -18,6 +18,8 @@
 
         name: 'accordion',
 
+        examples: {},
+
         props: ['component'],
 
         partials: {
@@ -26,7 +28,8 @@
 
         data() {
             return {
-                title: 'Accordion'
+                title: 'Accordion',
+                examples: this.$options.examples
             };
         }
     };

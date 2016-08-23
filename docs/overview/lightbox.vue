@@ -23,6 +23,8 @@
 
         namespace: 'core',
 
+        examples: {},
+
         partials: {
             'overview-component':  require('../../src/templates/overview-component.html')
         },
@@ -34,7 +36,8 @@
                 title: 'Lightbox',
                 props: js_index.components.components.lightbox.props,
                 options: js_index.components.components.lightbox.options,
-                vars: []
+                vars: [],
+                examples: this.$options.examples
             };
         }
     };

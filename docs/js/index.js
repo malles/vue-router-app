@@ -9,6 +9,9 @@ module.exports = {
                 name: 'boot',
                 title: 'Boot',
                 component: Vue.extend(require('./api/boot.vue')),
+                mixins: [],
+                events: [],
+                methods: [],
                 props: [],
                 options: []
             },
@@ -16,6 +19,44 @@ module.exports = {
                 name: 'component',
                 title: 'Component',
                 component: Vue.extend(require('./api/component.vue')),
+                mixins: [],
+                events: [],
+                methods: [],
+                props: [],
+                options: []
+            }
+        }
+    },
+    'components': {
+        name: 'components',
+        title: 'Components',
+        components: {
+            'lightbox': {
+                name: 'lightbox',
+                title: 'Lightbox',
+                component: Vue.extend(require('./components/lightbox.vue')),
+                mixins: [],
+                events: [],
+                methods: [],
+                props: [
+                    {key: 'toggle', value: 'Selector', default: 'a', description: 'Elements toggling the lightbox, containing the images'},
+                    {key: 'duration', value: 'Number', default: 500, description: 'Duration of the animation'},
+                    {key: 'inverse', value: 'Boolean', default: 'false', description: 'Inverted slidenav colors'}
+                ],
+                options: [
+                    {key: 'dark', value: 'Boolean', default: 'false', description: 'Dark style'},
+                    {key: 'attrItem', value: 'String', default: 'uk-lightbox-item', description: 'Class name of the item'},
+                    {key: 'items', value: 'Array', default: '[]', description: 'Array of image-urls'},
+                    {key: 'index', value: 'Number', default: '0', description: 'Index of item to open'}
+                ]
+            },
+            'notification': {
+                name: 'notification',
+                title: 'Notification',
+                component: Vue.extend(require('./components/notification.vue')),
+                mixins: [],
+                events: [],
+                methods: [],
                 props: [],
                 options: []
             }
@@ -29,6 +70,9 @@ module.exports = {
                 name: 'accordion',
                 title: 'Accordion',
                 component: Vue.extend(require('./core/accordion.vue')),
+                mixins: [],
+                events: [],
+                methods: [],
                 props: [
                     {key: 'targets', value: 'Selector', default: '> *', description: ''},
                     {key: 'active', value: 'Boolean', default: 'false', description: ''},
@@ -47,38 +91,29 @@ module.exports = {
                 name: 'alert',
                 title: 'Alert',
                 component: Vue.extend(require('./core/alert.vue')),
-                props: [],
-                options: []
+                mixins: ['Class', 'Toggable'],
+                events: [],
+                methods: [
+                    {name: 'closeAlert', arguments: '-', description: `Close the alert element<br><code>UIkit.alert($('#my-alert')).closeAlert();</code>`},
+                ],
+                props: [
+                    {key: 'animation', value: 'Boolean', default: 'true', description: 'Apply animation'},
+                    {key: 'close', value: 'Selector', default: '.uk-alert-close', description: 'Selector for close button'}
+                ],
+                options: [
+                    {key: 'duration', value: 'Number', default: 500, description: 'Duration of the animation'}
+                ]
             }
         }
     },
-    'components': {
-        name: 'components',
-        title: 'Components',
-        components: {
-            'lightbox': {
-                name: 'lightbox',
-                title: 'Lightbox',
-                component: Vue.extend(require('./components/lightbox.vue')),
-                props: [
-                    {key: 'toggle', value: 'Selector', default: 'a', description: 'Elements toggling the lightbox, containing the images'},
-                    {key: 'duration', value: 'Number', default: 500, description: 'Duration of the animation'},
-                    {key: 'inverse', value: 'Boolean', default: 'false', description: 'Inverted slidenav colors'}
-                ],
-                options: [
-                    {key: 'dark', value: 'Boolean', default: 'false', description: 'Dark style'},
-                    {key: 'attrItem', value: 'String', default: 'uk-lightbox-item', description: 'Class name of the item'},
-                    {key: 'items', value: 'Array', default: '[]', description: 'Array of image-urls'},
-                    {key: 'index', value: 'Number', default: '0', description: 'Index of item to open'}
-                ]
-            },
-            'notification': {
-                name: 'notification',
-                title: 'Notification',
-                component: Vue.extend(require('./components/notification.vue')),
-                props: [],
-                options: []
-            }
-        }
+    'mixin': {
+        name: 'mixin',
+        title: 'Mixins',
+        components: {}
+    },
+    'util': {
+        name: 'util',
+        title: 'Utility',
+        components: {}
     }
 };

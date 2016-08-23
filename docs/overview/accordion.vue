@@ -12,11 +12,11 @@
 
         <p>Animates on opening</p>
 
-        <code-example class="uk-margin" :example="examples.overview"></code-example>
+        <code-example class="uk-margin" :example="examples.animated"></code-example>
 
         <h4>Multiple</h4>
 
-        <p>Allow multiple drawers to be open</p>
+        <p>Allow multiple drawers to be open at once</p>
 
         <code-example class="uk-margin" :example="examples.multiple"></code-example>
 
@@ -35,6 +35,77 @@
 
         namespace: 'core',
 
+        examples: {
+            animated: {
+                example: `<ul uk-accordion>
+    <li class="uk-open">
+
+        <h3 class="uk-accordion-title">Item 1</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+    <li>
+
+        <h3 class="uk-accordion-title">Item 2</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+    <li>
+
+        <h3 class="uk-accordion-title">Item 3</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+</ul>`,
+                html: `<ul uk-accordion>
+    <li class="uk-open">
+        <h3 class="uk-accordion-title">Title</h3>
+        <div class="uk-accordion-content">...</div>
+    </li>
+</ul>`
+            },
+            multiple: {
+                example: `<ul uk-accordion="multiple: true">
+    <li class="uk-open">
+
+        <h3 class="uk-accordion-title">Item 1</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+    <li>
+
+        <h3 class="uk-accordion-title">Item 2</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+    <li>
+
+        <h3 class="uk-accordion-title">Item 3</h3>
+        <div class="uk-accordion-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+
+    </li>
+</ul>`,
+                html: `<ul uk-accordion="multiple: true">
+    <li class="uk-open">
+        <h3 class="uk-accordion-title">Title</h3>
+        <div class="uk-accordion-content">...</div>
+    </li>
+</ul>`
+            }
+        },
+
         partials: {
             'overview-component':  require('../../src/templates/overview-component.html')
         },
@@ -47,76 +118,7 @@
                 props: js_index.core.components.accordion.props,
                 options: js_index.core.components.accordion.options,
                 vars: less_index.accordion.vars,
-                examples: {
-                    overview: {
-                        example: `<ul uk-accordion>
-    <li class="uk-open">
-
-        <h3 class="uk-accordion-title">Item 1</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-    <li>
-
-        <h3 class="uk-accordion-title">Item 2</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-    <li>
-
-        <h3 class="uk-accordion-title">Item 3</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-</ul>`,
-                        html: `<ul uk-accordion>
-    <li class="uk-open">
-        <h3 class="uk-accordion-title">Title</h3>
-        <div class="uk-accordion-content">...</div>
-    </li>
-</ul>`
-                    },
-                    multiple: {
-                        example: `<ul uk-accordion="multiple: true">
-    <li class="uk-open">
-
-        <h3 class="uk-accordion-title">Item 1</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-    <li>
-
-        <h3 class="uk-accordion-title">Item 2</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-    <li>
-
-        <h3 class="uk-accordion-title">Item 3</h3>
-        <div class="uk-accordion-content">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-
-    </li>
-</ul>`,
-                        html: `<ul uk-accordion="multiple: true">
-    <li class="uk-open">
-        <h3 class="uk-accordion-title">Title</h3>
-        <div class="uk-accordion-content">...</div>
-    </li>
-</ul>`
-                    }
-                }
+                examples: this.$options.examples
             };
         }
     };

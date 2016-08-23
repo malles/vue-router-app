@@ -24,18 +24,9 @@
 
         name: 'lightbox',
 
-        props: ['component'],
-
-        partials: {
-            'javascript-component':  require('../../../src/templates/javascript-component.html')
-        },
-
-        data() {
-            return {
-                title: 'Lightbox',
-                examples: {
-                    manual: {
-                        example: `<button id="lightbox" class="uk-button uk-button-default">Dynamic lightbox</button>
+        examples: {
+            manual: {
+                example: `<button id="lightbox" class="uk-button uk-button-default">Dynamic lightbox</button>
 
 <script>
    (function () {
@@ -51,13 +42,24 @@
 
     })();
 <\/script>`,
-                        js: `UIkit.lightbox('#lightbox', {items: [
+                js: `UIkit.lightbox('#lightbox', {items: [
     {source: 'http://unsplash.it/700/700/?random', title: '700x700', type: 'image'},
     {source: 'http://unsplash.it/400/500/?random', title: '400x500', type: 'image'},
 ]})[0].show();`,
-                        html: ``
-                    }
-                }
+                html: ``
+            }
+        },
+
+        props: ['component'],
+
+        partials: {
+            'javascript-component':  require('../../../src/templates/javascript-component.html')
+        },
+
+        data() {
+            return {
+                title: 'Lightbox',
+                examples: this.$options.examples
             };
         }
     };

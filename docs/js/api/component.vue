@@ -19,6 +19,8 @@
 
         name: 'component',
 
+        examples: {},
+
         props: ['component'],
 
         partials: {
@@ -27,7 +29,8 @@
 
         data() {
             return {
-                title: 'Component'
+                title: 'Component',
+                examples: this.$options.examples
             };
         }
     };

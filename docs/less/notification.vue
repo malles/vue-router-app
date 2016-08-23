@@ -18,6 +18,8 @@
 
         name: 'notification',
 
+        examples: {},
+
         props: ['component'],
 
         partials: {
@@ -26,7 +28,8 @@
 
         data() {
             return {
-                title: 'Notification'
+                title: 'Notification',
+                examples: this.$options.examples
             };
         }
     };

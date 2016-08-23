@@ -23,6 +23,8 @@
 
         namespace: 'core',
 
+        examples: {},
+
         partials: {
             'overview-component':  require('../../src/templates/overview-component.html')
         },
@@ -34,7 +36,8 @@
                 title: 'Notification',
                 props: js_index.components.components.notification.props,
                 options: js_index.components.components.notification.options,
-                vars: less_index.notification.vars
+                vars: less_index.notification.vars,
+                examples: this.$options.examples
             };
         }
     };

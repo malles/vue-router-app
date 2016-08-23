@@ -43,7 +43,11 @@ router.map({
     '/overview': {
         name: 'overview',
         component: Vue.extend(overview),
-        subRoutes: require('../docs/overview/subroutes')
+        subRoutes: _.assign({'/': {
+            name: 'accordion',
+            title: 'Accordion',
+            component: Vue.extend(require('../docs/overview/accordion.vue'))
+        }}, require('../docs/overview/subroutes'))
     },
     '/javascript/:namespace/:component': {
         name: 'javascript',
