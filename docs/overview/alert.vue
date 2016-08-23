@@ -14,7 +14,7 @@
         <code-example class="uk-margin" :example="examples.modifiers"></code-example>
 
 
-        <h4 v-permalink:more-contet="route">More content</h4>
+        <h4 v-permalink:more-content="route">More content</h4>
 
         <p>Use a <code>button</code> element ...</p>
 

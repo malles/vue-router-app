@@ -8,7 +8,7 @@ function prepareLink(route) {
             return base + '/' + route.params.component;
         }
     }
-    return base;
+    return '/overview' + base;
 }
 
 module.exports = {
