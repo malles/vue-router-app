@@ -1,6 +1,5 @@
 //todo router api??
 function prepareLink(route) {
-    console.log(route.name);
     var base = '/' + route.name;
     if (route.params) {
         if (route.params.namespace) {
@@ -24,8 +23,6 @@ module.exports = {
         this.el.appendChild(this.link);
     },
     update: function (route) {
-        console.log(this.target);
-        console.log(route);
         var id = (route.params ? route.params.component : route.name) + this.target,
             url = prepareLink(route);
         if (this.target) {
