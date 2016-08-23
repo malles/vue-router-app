@@ -1,0 +1,10 @@
+
+<h2 :id="$options.name">{{ title }}</h2>
+
+<ul class="uk-subnav uk-subnav-divider">
+    <li v-if="options.length">
+        <a v-link="{name: 'javascript',  params: {namespace: $options.namespace, component: $options.name} }">Javascript</a></li>
+    <li v-if="vars.length"><a v-link="{name: 'less',  params: {component: $options.name} }">Less</a></li>
+    <li><a href="#">Test</a></li>
+</ul>
+

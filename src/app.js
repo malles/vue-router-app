@@ -64,7 +64,7 @@ router.afterEach((transition) => {
         console.log(`scroll to ${transition.to.params.component}`);
         var a = jQuery(`<a href="#${transition.to.params.component}"></a>`);
         UIkit.scroll(a);
-        a.trigger('click'); //todo?!?
+        Vue.nextTick(() => a.trigger('click')); //todo?!?
     }
 });
 

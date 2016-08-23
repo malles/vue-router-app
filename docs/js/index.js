@@ -4,6 +4,7 @@ module.exports = {
     'api': {
         name: 'api',
         title: 'Api',
+        description: 'Api description',
         components: {
             'boot': {
                 name: 'boot',
@@ -30,6 +31,7 @@ module.exports = {
     'components': {
         name: 'components',
         title: 'Components',
+        description: 'Components description',
         components: {
             'lightbox': {
                 name: 'lightbox',
@@ -65,6 +67,7 @@ module.exports = {
     'core': {
         name: 'core',
         title: 'Core',
+        description: 'Core description',
         components: {
             'accordion': {
                 name: 'accordion',
@@ -109,11 +112,13 @@ module.exports = {
     'mixin': {
         name: 'mixin',
         title: 'Mixins',
+        description: 'Mixins description',
         components: {}
     },
     'util': {
         name: 'util',
         title: 'Utility',
+        description: 'Utility description',
         components: {}
     }
 };

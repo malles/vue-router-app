@@ -1,0 +1,10 @@
+
+<h2 :id="$options.name">{{ title }}</h2>
+
+
+<ul class="uk-subnav uk-subnav-divider">
+    <li v-if="overview"><a v-link="overview">Overview</a></li>
+    <li v-if="javascript"><a v-link="javascript">Javascript</a></li>
+    <li v-if="less"><a v-link="less">Less</a></li>
+    <li><a href="#">Test</a></li>
+</ul>

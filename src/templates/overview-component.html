@@ -1,11 +1,6 @@
 
 <div>
 
-
-
-
-
-
     <h4>Quick overview</h4>
 
     <ul class="uk-tab" uk-tab="connect:'#switcher-{{$options.name}}'">
@@ -17,23 +12,23 @@
     <ul id="switcher-{{$options.name}}" class="uk-switcher">
         <li v-if="props.length">
 
-            <p><a v-link="{name: 'javascript',  params: {namespace: $options.namespace, component: $options.name} }">Full javascript documentation</a></p>
-
             <javascript-options :options="props"></javascript-options>
+
+            <p><a v-link="{name: 'javascript',  params: {namespace: $options.namespace, component: $options.name} }">Full javascript documentation</a></p>
 
         </li>
         <li v-if="options.length">
 
-            <p><a v-link="{name: 'javascript',  params: {namespace: $options.namespace, component: $options.name} }">Full javascript documentation</a></p>
-
             <javascript-options :options="options"></javascript-options>
+
+            <p><a v-link="{name: 'javascript',  params: {namespace: $options.namespace, component: $options.name} }">Full javascript documentation</a></p>
 
         </li>
         <li v-if="vars.length">
 
-            <p><a v-link="{name: 'less',  params: {component: $options.name} }">Full LESS documentation</a></p>
-
             <javascript-options :options="vars"></javascript-options>
+
+            <p><a v-link="{name: 'less',  params: {component: $options.name} }">Full LESS documentation</a></p>
 
         </li>
     </ul>

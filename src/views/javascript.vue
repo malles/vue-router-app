@@ -40,12 +40,10 @@
 
                     <div class="uk-width-1-1">
 
-                        <h2 :id="`${namespace.name}-main`">
-                            <a uk-icon="icon: link" class="uk-float-right uk-icon-link"
-                               v-link="{ name: 'javascript', params: { namespace: namespace.name, component: (namespace.name + '-main') } }"></a>
+                        <h2 class="uk-heading-primary" :id="`${namespace.name}-main`">
                             {{ namespace.title }}</h2>
 
-                        <p>Bacon ipsum dolor amet ham sausage landjaeger pork loin, bacon sirloin short ribs tri-tip salami shank. Capicola shoulder drumstick, frankfurter picanha pancetta shank pastrami bresaola prosciutto biltong venison. Picanha sausage drumstick biltong, capicola venison boudin flank rump short ribs cow frankfurter pork landjaeger. Sirloin sausage cow frankfurter. Bacon drumstick tenderloin venison tongue pork brisket pancetta. Spare ribs pancetta pork loin, pork chop biltong alcatra t-bone picanha prosciutto strip steak cupim. Fatback picanha corned beef pork capicola ground round doner kielbasa shoulder beef ribs.</p>
+                        <p>{{ namespace.description }}</p>
 
                     </div>
 

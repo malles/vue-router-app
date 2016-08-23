@@ -1,10 +1,7 @@
 <template>
     <div>
 
-        <h3 :id="$options.name">
-            <a uk-icon="icon: link" class="uk-float-right uk-icon-link" v-link="{ name: $options.name }"></a>
-            {{ title }}
-        </h3>
+        <partial name="overview-header"></partial>
 
         <p>Bacon ipsum dolor amet ham sausage landjaeger pork loin, bacon sirloin short ribs tri-tip salami shank. Capicola shoulder drumstick, frankfurter picanha pancetta shank pastrami bresaola prosciutto biltong venison. Picanha sausage drumstick biltong, capicola venison boudin flank rump short ribs cow frankfurter pork landjaeger. Sirloin sausage cow frankfurter. Bacon drumstick tenderloin venison tongue pork brisket pancetta. Spare ribs pancetta pork loin, pork chop biltong alcatra t-bone picanha prosciutto strip steak cupim. Fatback picanha corned beef pork capicola ground round doner kielbasa shoulder beef ribs.</p>
 
@@ -107,6 +104,7 @@
         },
 
         partials: {
+            'overview-header':  require('../../src/templates/overview-header.html'),
             'overview-component':  require('../../src/templates/overview-component.html')
         },
 

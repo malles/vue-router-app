@@ -1,11 +1,7 @@
 <template>
     <div>
 
-        <h3 :id="$options.name">
-            <a uk-icon="icon: link" class="uk-float-right uk-icon-link"
-               v-link="{ name: 'javascript', params: { namespace: 'core', component: $options.name } }"></a>
-            {{ title }}
-        </h3>
+        <partial name="component-header"></partial>
 
         <p>Bacon ipsum dolor amet ham sausage landjaeger pork loin, bacon sirloin short ribs tri-tip salami shank.</p>
 
@@ -24,6 +20,7 @@
         props: ['component'],
 
         partials: {
+            'component-header':  require('../../../src/templates/component-header.html'),
             'javascript-component':  require('../../../src/templates/javascript-component.html')
         },
 
