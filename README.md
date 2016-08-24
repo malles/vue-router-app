@@ -3,4 +3,5 @@
 Simple example app for Vue Router
 
  - `npm install` and `bower install`
- - `webpack --watch` to build and serve
+ - Go to `/public/assets/uikit3` and `npm install`, `node scripts/build`, `npm run compile-less` to build UIkit
+ - Run `webpack --watch` in root to build and serve
